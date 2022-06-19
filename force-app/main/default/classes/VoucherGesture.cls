@@ -4,9 +4,10 @@ public without sharing class VoucherGesture {
         List<Voucher__c> result = new List<Voucher__c>();
         for (Voucher__c v : vouchers){
             v.discount__c = 40;
-            update v;
+            result.add(v);
             
-        }   
+        }  
+        update result; 
     }
     
 }
