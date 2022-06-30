@@ -7,6 +7,7 @@ public without sharing class AccountGesture {
             result.add(a);
             
         }  
+        //update result
         update result; 
     }
     
