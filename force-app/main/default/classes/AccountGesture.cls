@@ -1,6 +1,6 @@
 public without sharing class AccountGesture {
     
-    public static void updateName(Account accounts) {
+    public static void updateName(List<Account> accounts) {
         List<Account> result = new List<Account>();
         for (Account a : accounts){
             a.Name = 'New account';
@@ -10,4 +10,4 @@ public without sharing class AccountGesture {
         update result; 
     }
     
-}é
+}
