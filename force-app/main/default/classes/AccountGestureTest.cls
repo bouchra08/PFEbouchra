@@ -3,7 +3,7 @@ public with sharing class AccountGestureTest {
     
     @isTest
     static  void testupdateName() {
-        //create account
+        //create account with new name
         Account a = new Account(Name='New account');
         insert a;
         List<Account> result = new List<Account>();
