@@ -4,11 +4,10 @@ public without sharing class AccountGesture {
         List<Account> result = new List<Account>();
         for (Account a : accounts){
             a.Name = 'New account';
-            update a;
-           // result.add(a);
+            result.add(a);
             
         }  
-        //update result; 
+        update result; 
     }
     
-}
+}&
