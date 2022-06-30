@@ -1,7 +1,7 @@
 name: SFDX Test Run on Push
 
 on: 
-  pull_request:
+  push:
      branches: [ uat ]
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
@@ -18,5 +18,6 @@ jobs:
       - name: 'Convert Metadata'
         run: sfdx force:source:convert --rootdir=force-app --outputdir=convert
       - name: 'Run Test on Metadata'
-        run: sfdx force:mdapi:deploy --deploydir=convert --testlevel=RunLocalTests --checkonly
-     
+        run: sfdx force:mdapi:deploy --deploydir=convert --testlevel=RunLocalTests 
+      - name: sfdx-test-run
+        run: sfdx force:apex:test:run -l RunLocalTests -w 30  
