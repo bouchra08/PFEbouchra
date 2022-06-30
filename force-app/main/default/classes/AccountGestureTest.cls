@@ -10,8 +10,8 @@ public with sharing class AccountGestureTest {
         result.add(a);
         AccountGesture.updateName(result);
         b = [SELECT Name FROM updateName WHERE Id =:a.Id];
-        System.debug('New name : ' + a.Name);
-        System.assertEquals('New account', a.Name);
+        System.debug('New name : ' + b.Name);
+        System.assertEquals('New account', b.Name, 'diff values');
 
     }
 }
