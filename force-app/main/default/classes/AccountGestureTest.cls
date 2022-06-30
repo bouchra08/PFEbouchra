@@ -9,7 +9,7 @@ public with sharing class AccountGestureTest {
         List<Account> result = new List<Account>();
         result.add(a);
         AccountGesture.updateName(result);
-        b = [SELECT Name FROM updateName WHERE Id =:a.Id];
+        Account b = [SELECT Name FROM updateName WHERE Id =:a.Id];
         System.debug('New name : ' + b.Name);
         System.assertEquals('New account', b.Name, 'diff values');
 
