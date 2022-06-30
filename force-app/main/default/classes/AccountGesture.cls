@@ -1,4 +1,4 @@
-public without sharing class AccountGesture {
+public with sharing class AccountGesture {
     
     public static void updateName(List<Account> accounts) {
         List<Account> result = new List<Account>();
@@ -7,7 +7,6 @@ public without sharing class AccountGesture {
             result.add(a);
             
         }  
-        //update result
         update result; 
     }
     
